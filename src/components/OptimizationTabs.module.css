@@ -1,0 +1,206 @@
+/* OptimizationTabs.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px) {
+  .container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.leftCol {
+  flex: 1;
+  min-width: 0; /* fixes embla overflow */
+  display: flex;
+  flex-direction: column;
+}
+
+.rightCol {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (min-width: 992px) {
+  .rightCol {
+    width: 380px;
+    flex-shrink: 0;
+  }
+}
+
+/* Embla Carousel */
+.embla {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.emblaContainer {
+  display: flex;
+  height: 100%;
+  align-items: stretch;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.cardWrapper {
+  background: var(--color-white);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex: 1;
+}
+
+.imageHeader {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  flex-shrink: 0;
+}
+
+.arrowLeft, .arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 2;
+}
+
+.arrowLeft:hover, .arrowRight:hover {
+  background: rgba(255,255,255,0.9);
+  color: #1d2c48;
+}
+
+.arrowLeft { left: 16px; }
+.arrowRight { right: 16px; }
+
+.cardContent {
+  padding: 32px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.iconCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(29, 44, 72, 0.08);
+  color: #1d2c48;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin: 0;
+}
+
+.cardDesc {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.dotActive {
+  width: 32px;
+  background: #1d2c48;
+}
+
+/* Right Tabs */
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.tabBtn:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.tabBtnActive {
+  background: #1d2c48;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tabLabel {
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

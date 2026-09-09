@@ -6,8 +6,10 @@ import BackToTop from "@/components/BackToTop";
 import { PreFooterCTA } from "@/components/PreFooterCTA";
 
 import PillarsCarousel from "@/components/PillarsCarousel";
+import { OptimizeSpendCarousel } from "@/components/OptimizeSpendCarousel";
 import FloatingShapes from "@/components/FloatingShapes";
 import ParticleMesh from "@/components/ParticleMesh";
+import OptimizationTabs from "@/components/OptimizationTabs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { CoverageSection } from "@/components/CoverageSection";
 import { ScanSearch, Eye, Volume2, ShieldAlert, FileText } from "lucide-react";
@@ -34,21 +36,21 @@ export default function HomePage() {
           <div className={styles.heroContent}>
             <div className={styles.heroBadge} id="hero-badge">
               <span className={styles.heroBadgeDot} />
-              Connected Threat Response
+              Operational Security Reviews
             </div>
             <h1 className={styles.heroTitle} id="hero-title">
-              Hybrid <span className={styles.heroTitleAccent}>Security</span>
+              Security Cost <span className={styles.heroTitleAccent}>Optimization</span>
             </h1>
             <p className={styles.heroSubtitle}>
-              Secure Guard unifies video surveillance, 24/7 central dispatch, and field guard teams into one connected response network. Integrating with existing cameras or standalone mobile towers, our model manages the entire incident lifecycle, from threat detection and verification to live voice deterrence, field dispatch, and SecureTrack tracking.
+              Secure Guard Security Services conducts operational security reviews designed to identify where coverage may be misaligned with the way a property actually operates and where the security budget may be better allocated.
             </p>
             <div className={styles.heroCtas}>
               <a 
-                href="https://www.secureguardservices.com/service" 
+                href="#assessment-form" 
                 className={styles.btnPrimary} 
                 id="hero-cta-primary"
               >
-                See How Hybrid Security Works
+                Get a Security Assessment
               </a>
             </div>
           </div>
@@ -74,24 +76,24 @@ export default function HomePage() {
             </div>
             <div className={styles.addonContent}>
               <div className={styles.sectionHeader} style={{ margin: "0", textAlign: "left" }}>
-                <span className={styles.sectionTag}>Complete Incident Control</span>
+                <span className={styles.sectionTag}>Operational Rhythms</span>
                 <h2 className={styles.sectionTitle} style={{ marginBottom: "16px" }}>
-                  Camera Alert Is Only the Beginning
+                  Where Security Coverage Can Fall Short
                 </h2>
               </div>
               <p className={styles.bodyText}>
-                Secure Guard’s hybrid security model bridges the gap between technology and physical security by managing the complete incident sequence for you.
+                Simply increasing security hours does not guarantee better protection if coverage fails to align with your property’s actual operational rhythms.
               </p>
               <p className={styles.bodyText}>
-                Instead of leaving property managers to determine next steps after an alert, our connected system automatically flags off-hours activity in high-vulnerability zones, verifies live footage in seconds to eliminate false alarms, and immediately executes your custom response protocols—whether that means issuing live voice warnings, dispatching mobile field patrols, or coordinating directly with local law enforcement.
+                Secure Guard evaluates your site's daily activity patterns to align security hours directly with your highest-vulnerability periods, ensuring your resources are deployed where they deliver maximum protection rather than spread thin across static shifts.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== SECTION 3: How Hybrid Security Works (Glass & Navy) ===== */}
-      <section className={`${styles.section} ${styles.sectionDark}`} id="how-it-works" style={{ position: 'relative', overflow: 'hidden' }}>
+      {/* ===== SECTION 3: How We Optimize Your Security Spend (Glass & Navy) ===== */}
+      <section className={`${styles.section} ${styles.sectionDark}`} id="how-we-optimize" style={{ position: 'relative', overflow: 'hidden' }}>
         {/* Navy Blue Filtered Background Image */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
           <Image 
@@ -106,56 +108,13 @@ export default function HomePage() {
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div className={styles.sectionHeader} style={{ marginBottom: '48px', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', width: '100%', maxWidth: '100%' }}>
-            <span className={styles.sectionTag} style={{ color: "#b89000", background: "rgba(254, 207, 49, 0.13)", borderColor: "rgba(254, 207, 49, 0.35)" }}>Unified Incident Response</span>
+            <span className={styles.sectionTag} style={{ color: "#b89000", background: "rgba(254, 207, 49, 0.13)", borderColor: "rgba(254, 207, 49, 0.35)" }}>Budget Efficiency</span>
             <h2 className={styles.sectionTitle} style={{ color: 'var(--color-white)' }}>
-              How Hybrid Security Works
+              How We Optimize Your Security Spend
             </h2>
-            <p className={styles.bodyTextCenteredLight} style={{ maxWidth: '100%', width: '100%', margin: '0 auto' }}>
-              Hybrid security combines technology and physical security so each layer supports the others. This automated detection layer provides uninterrupted property oversight across expansive or complex commercial sites without relying solely on physical guard patrols.
-            </p>
           </div>
           
-          <div className={styles.featuresGrid}>
-            <div className={styles.featureCardGlass}>
-              <div className={styles.featureCardIcon}>
-                <ScanSearch size={28} />
-              </div>
-              <h3 className={styles.featureTitle}>Real-Time Detection</h3>
-              <p className={styles.featureDesc}>High-definition fixed cameras, thermal sensors, and mobile surveillance towers continuously monitor perimeters and access points to trigger instant system alerts upon unauthorized movement.</p>
-            </div>
-
-            <div className={styles.featureCardGlass}>
-              <div className={styles.featureCardIcon}>
-                <Eye size={28} />
-              </div>
-              <h3 className={styles.featureTitle}>Human Verification</h3>
-              <p className={styles.featureDesc}>24/7 central monitoring specialists instantly evaluate live video feeds upon alert activation to distinguish genuine operational threats from harmless environmental movement.</p>
-            </div>
-
-            <div className={styles.featureCardGlass}>
-              <div className={styles.featureCardIcon}>
-                <Volume2 size={28} />
-              </div>
-              <h3 className={styles.featureTitle}>Remote Intervention</h3>
-              <p className={styles.featureDesc}>When suspicious activity is verified, monitoring personnel utilize high-decibel two-way speakers to broadcast live, localized voice-down warnings directly to unauthorized individuals.</p>
-            </div>
-
-            <div className={styles.featureCardGlass}>
-              <div className={styles.featureCardIcon}>
-                <ShieldAlert size={28} />
-              </div>
-              <h3 className={styles.featureTitle}>Coordinated Field Dispatch</h3>
-              <p className={styles.featureDesc}>When physical on-site intervention is required, central dispatch immediately deploys resources according to your customized property security plan.</p>
-            </div>
-
-            <div className={styles.featureCardGlass}>
-              <div className={styles.featureCardIcon}>
-                <FileText size={28} />
-              </div>
-              <h3 className={styles.featureTitle}>Digital Reporting</h3>
-              <p className={styles.featureDesc}>Every system alert, verification, intervention, and dispatch action is automatically logged with verified metadata inside the SecureTrack platform, delivering transparency.</p>
-            </div>
-          </div>
+          <OptimizationTabs />
         </div>
       </section>
 
