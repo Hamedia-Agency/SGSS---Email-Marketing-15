@@ -1,0 +1,237 @@
+.formCard {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: 40px 36px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(29, 44, 72, 0.12);
+  box-shadow: var(--shadow-xl);
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(254, 207, 49, 0.2);
+  border: 1px solid rgba(254, 207, 49, 0.5);
+  color: var(--color-dark-blue);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 14px;
+}
+
+.badgeIcon {
+  color: var(--color-dark-blue);
+}
+
+.title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  height: 3px;
+  width: 60px;
+  background: var(--color-gold);
+  margin: 0 auto 14px;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--color-gray);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Form Layout */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row2Col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 540px) {
+  .row2Col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-dark-blue);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  padding: 13px 16px;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  color: var(--color-dark);
+  transition: all var(--transition);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  background: var(--color-white);
+  border-color: var(--color-dark-blue);
+  box-shadow: 0 0 0 3px rgba(254, 207, 49, 0.4);
+}
+
+.textarea {
+  resize: none;
+  min-height: 100px;
+}
+
+/* Checkbox Terms */
+.termsGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-dark-blue);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.termsText {
+  font-size: 11px;
+  color: var(--color-gray);
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.privacyLink {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.submitBtn {
+  width: 100%;
+  background: var(--color-gold);
+  color: var(--color-dark-blue);
+  font-size: 15px;
+  font-weight: 900;
+  padding: 16px 24px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+}
+
+.submitBtn:hover {
+  background: var(--color-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(254, 207, 49, 0.4);
+}
+
+/* Success State */
+.successCard {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  background: var(--color-white);
+  padding: 48px 36px;
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(29, 44, 72, 0.12);
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+}
+
+.successIconCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(254, 207, 49, 0.2);
+  color: var(--color-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.successTitle {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--color-dark-blue);
+  margin-bottom: 12px;
+}
+
+.successDesc {
+  font-size: 15px;
+  color: var(--color-dark);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.resetBtn {
+  background: var(--color-dark-blue);
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.resetBtn:hover {
+  background: var(--color-dark-blue-light);
+}

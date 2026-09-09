@@ -1,0 +1,56 @@
+.backToTopContainer {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all var(--transition);
+  z-index: 99;
+}
+
+.backToTopContainer.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.backToTopContainer:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.innerCircle {
+  width: 44px;
+  height: 44px;
+  background: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition);
+}
+
+.iconContainer {
+  color: var(--color-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition);
+}
+
+.backToTopContainer:hover .innerCircle {
+  background: var(--color-bg-section);
+}
+
+.backToTopContainer:hover .iconContainer {
+  color: var(--color-gold);
+}

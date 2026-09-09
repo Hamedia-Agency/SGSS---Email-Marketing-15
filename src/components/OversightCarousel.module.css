@@ -1,0 +1,125 @@
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 48px;
+  padding-bottom: 48px; /* Space for dots */
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+  padding: 16px;
+  margin: -16px;
+}
+
+.embla__container {
+  display: flex;
+  margin-left: -24px; /* Adjust gap */
+}
+
+.embla__slide {
+  flex: 0 0 calc(100% - 24px); /* Full width for the card (minus gap) */
+  min-width: 0;
+  padding-left: 24px;
+}
+
+.oversightCard {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100%;
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 50%; /* Image takes half the card */
+  min-height: 350px;
+}
+
+.cardImage {
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 48px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #0a1f3d;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.cardDesc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+/* Pagination Dots */
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.embla__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #d1d5db; /* Light gray */
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.embla__dot--selected {
+  background-color: var(--color-gold, #fecf31); /* Yellow/gold for active */
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .oversightCard {
+    flex-direction: column;
+  }
+  .cardImageWrapper {
+    width: 100%;
+    min-height: 250px;
+  }
+  .cardContent {
+    padding: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .embla__slide {
+    flex: 0 0 100%;
+    padding-left: 16px;
+  }
+  .embla__container {
+    margin-left: -16px;
+  }
+  .cardContent {
+    padding: 24px;
+  }
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+}

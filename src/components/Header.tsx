@@ -1,211 +1,165 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { useModal } from '@/context/ModalContext';
-import { Shield, Menu, X, ArrowRight, Phone } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Shield, PhoneCall, Menu, X, ArrowRight, Video } from "lucide-react";
 
-export default function Header() {
-  const { openModal } = useModal();
+interface HeaderProps {
+  onOpenModal: () => void;
+}
+
+export default function Header({ onOpenModal }: HeaderProps) {
+  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = [
-    { label: 'Overview', href: '#overview' },
-    { label: 'What We Review', href: '#what-we-review' },
-    { label: 'SecureTrack™', href: '#securetrack' },
-    { label: 'Consultation Gains', href: '#gains' },
-    { label: 'SoCal Coverage', href: '#coverage' },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header style={{
-      position: 'sticky',
-      top: 0,
-      zIndex: 900,
-      backgroundColor: '#1d2c48',
-      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-      boxShadow: '0 4px 20px rgba(29, 44, 72, 0.2)'
-    }}>
-      {/* Top emergency/call banner */}
-      <div style={{
-        backgroundColor: '#131e33',
-        padding: '6px 0',
-        fontSize: '0.82rem',
-        color: '#ffffff',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.05)'
-      }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{
-              display: 'inline-block',
-              width: '8px',
-              height: '8px',
-              backgroundColor: '#fecf31',
-              borderRadius: '50%'
-            }} />
-            <span style={{ opacity: 0.9 }}>Southern California Security Operations & Live Dispatch</span>
-          </div>
-          <a 
-            href="tel:18008000000" 
-            style={{ 
-              display: 'flex', 
-              alignItems: 'center', 
-              gap: '6px', 
-              color: '#fecf31', 
-              fontWeight: 600,
-              fontSize: '0.82rem'
-            }}
-          >
-            <Phone size={13} /> 24/7 Security Hotline: (800) 508-0128
-          </a>
-        </div>
-      </div>
-
-      {/* Main Navbar */}
-      <div className="container" style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        height: '76px'
-      }}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-[#1d2c48]/95 backdrop-blur-md shadow-lg py-3 border-b border-white/10"
+          : "bg-[#1d2c48] py-4 border-b border-white/10"
+      }`}
+    >
+      <div className="container-custom flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-          <div style={{
-            width: '44px',
-            height: '44px',
-            backgroundColor: '#fecf31',
-            borderRadius: '10px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#1d2c48',
-            boxShadow: '0 4px 12px rgba(254, 207, 49, 0.3)'
-          }}>
-            <Shield size={26} strokeWidth={2.5} />
+        <a href="#" className="flex items-center gap-3 group text-decoration-none">
+          <div className="w-10 h-10 rounded-lg bg-[#fecf31] flex items-center justify-center text-[#1d2c48] font-bold shadow-md group-hover:scale-105 transition-transform">
+            <Shield className="w-6 h-6 fill-[#1d2c48]/20 stroke-[#1d2c48] stroke-[2.5]" />
           </div>
-          <div>
-            <div style={{
-              color: '#ffffff',
-              fontWeight: 900,
-              fontSize: '1.25rem',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.1
-            }}>
+          <div className="flex flex-col">
+            <span className="text-white font-extrabold text-lg tracking-tight flex items-center gap-1.5 leading-none">
               SECURE GUARD
-            </div>
-            <div style={{
-              color: '#fecf31',
-              fontWeight: 600,
-              fontSize: '0.75rem',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase'
-            }}>
-              Security Services
-            </div>
+              <span className="text-[#fecf31] font-semibold text-xs px-1.5 py-0.5 rounded bg-[#fecf31]/15 border border-[#fecf31]/30">
+                SGSS
+              </span>
+            </span>
+            <span className="text-gray-300 text-xs tracking-wider uppercase font-medium mt-1">
+              Active Video Monitoring
+            </span>
           </div>
         </a>
 
-        {/* Desktop Nav Links */}
-        <nav style={{ display: 'none', gap: '28px', alignItems: 'center' }} className="desktop-nav">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              style={{
-                color: 'rgba(255, 255, 255, 0.88)',
-                fontWeight: 600,
-                fontSize: '0.95rem',
-                transition: 'color 0.2s ease',
-                textDecoration: 'none'
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#fecf31')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.88)')}
-            >
-              {link.label}
-            </a>
-          ))}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-200">
+          <a
+            href="#how-it-works"
+            className="hover:text-[#fecf31] transition-colors"
+          >
+            How It Works
+          </a>
+          <a
+            href="#live-demo"
+            className="hover:text-[#fecf31] transition-colors flex items-center gap-1.5"
+          >
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Live Simulator
+          </a>
+          <a
+            href="#business-benefits"
+            className="hover:text-[#fecf31] transition-colors"
+          >
+            Business Benefits
+          </a>
+          <a
+            href="#comparison"
+            className="hover:text-[#fecf31] transition-colors"
+          >
+            Active vs Passive
+          </a>
         </nav>
 
-        {/* Desktop CTA Button */}
-        <div style={{ display: 'none', alignItems: 'center', gap: '16px' }} className="desktop-nav">
-          <button
-            onClick={() => openModal()}
-            className="btn-primary"
-            style={{ padding: '12px 22px', fontSize: '0.95rem' }}
+        {/* Action Buttons */}
+        <div className="hidden lg:flex items-center gap-4">
+          <a
+            href="tel:18005557477"
+            className="flex items-center gap-2 text-xs font-semibold text-gray-300 hover:text-white transition-colors py-2 px-3 rounded-md hover:bg-white/5"
           >
-            Get Free Assessment <ArrowRight size={16} />
+            <PhoneCall className="w-4 h-4 text-[#fecf31]" />
+            <span>1-800-SGSS-PRO</span>
+          </a>
+          <button
+            onClick={onOpenModal}
+            className="btn-primary text-xs font-bold py-2.5 px-5 rounded-lg flex items-center gap-2 group"
+          >
+            <span>Book Assessment</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
 
-        {/* Mobile Menu Toggle Button */}
+        {/* Mobile Hamburger Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle Navigation Menu"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            background: 'transparent',
-            border: 'none',
-            color: '#ffffff',
-            padding: '8px'
-          }}
-          className="mobile-menu-btn"
+          className="md:hidden p-2 text-gray-200 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
+          aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div style={{
-          backgroundColor: '#131e33',
-          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-          padding: '24px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '16px'
-        }}>
-          {navLinks.map((link) => (
+        <div className="md:hidden bg-[#1d2c48] border-t border-white/10 px-6 py-6 space-y-4 animate-in slide-in-from-top duration-200">
+          <nav className="flex flex-col gap-4 text-base font-medium text-gray-200">
             <a
-              key={link.label}
-              href={link.href}
+              href="#how-it-works"
               onClick={() => setMobileMenuOpen(false)}
-              style={{
-                color: '#ffffff',
-                fontWeight: 600,
-                fontSize: '1.05rem',
-                padding: '8px 0',
-                borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                textDecoration: 'none'
-              }}
+              className="hover:text-[#fecf31] py-1 border-b border-white/5"
             >
-              {link.label}
+              How It Works
             </a>
-          ))}
-          <button
-            onClick={() => {
-              setMobileMenuOpen(false);
-              openModal();
-            }}
-            className="btn-primary"
-            style={{ width: '100%', marginTop: '12px' }}
-          >
-            Get Free Assessment <ArrowRight size={18} />
-          </button>
+            <a
+              href="#live-demo"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-[#fecf31] py-1 border-b border-white/5 flex items-center justify-between"
+            >
+              <span>Live Simulator</span>
+              <span className="text-xs bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold">
+                LIVE DEMO
+              </span>
+            </a>
+            <a
+              href="#business-benefits"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-[#fecf31] py-1 border-b border-white/5"
+            >
+              Business Benefits
+            </a>
+            <a
+              href="#comparison"
+              onClick={() => setMobileMenuOpen(false)}
+              className="hover:text-[#fecf31] py-1 border-b border-white/5"
+            >
+              Active vs Passive
+            </a>
+          </nav>
+          <div className="pt-2 flex flex-col gap-3">
+            <a
+              href="tel:18005557477"
+              className="flex items-center justify-center gap-2 py-3 bg-white/5 rounded-lg text-sm text-gray-200 font-semibold"
+            >
+              <PhoneCall className="w-4 h-4 text-[#fecf31]" />
+              <span>Call 1-800-SGSS-PRO</span>
+            </a>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenModal();
+              }}
+              className="btn-primary w-full py-3.5 text-sm justify-center"
+            >
+              <span>Book Assessment</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       )}
-
-      {/* Inline style tag for responsive media queries */}
-      <style jsx>{`
-        @media (min-width: 900px) {
-          .desktop-nav {
-            display: flex !important;
-          }
-          .mobile-menu-btn {
-            display: none !important;
-          }
-        }
-      `}</style>
     </header>
   );
 }

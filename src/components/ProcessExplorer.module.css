@@ -1,0 +1,245 @@
+.explorerContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+@media (min-width: 992px) {
+  .explorerContainer {
+    grid-template-columns: 350px 1fr;
+    align-items: stretch;
+    gap: 48px;
+  }
+}
+
+.tabList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .tabList {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold) transparent;
+  }
+  .tabList::-webkit-scrollbar {
+    height: 4px;
+  }
+  .tabList::-webkit-scrollbar-thumb {
+    background-color: var(--color-gold);
+    border-radius: 4px;
+  }
+}
+
+.tabButton {
+  border: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  background: #ffffff;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 991px) {
+  .tabButton {
+    flex-shrink: 0;
+    width: auto;
+    white-space: nowrap;
+    padding: 14px 20px;
+  }
+}
+
+.tabButton:hover {
+  border-color: rgba(254, 207, 49, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.activeTabButton {
+  background: #ffffff;
+  border-color: var(--color-gold);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--color-gold);
+}
+
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(29, 44, 72, 0.05);
+  color: var(--color-dark-blue);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.activeTabButton .tabIcon {
+  background: rgba(254, 207, 49, 0.15);
+  color: var(--color-gold);
+}
+
+.tabTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-dark-blue);
+  transition: color 0.3s ease;
+}
+
+.activeTabButton .tabTitle {
+  color: var(--color-dark-blue);
+}
+
+/* Right Content Display Card */
+.displayCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  color: var(--color-dark-blue);
+  min-height: 420px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .displayCard {
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  z-index: 2;
+}
+
+.cardTag {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  background: rgba(254, 207, 49, 0.1);
+  padding: 6px 12px;
+  border-radius: 100px;
+  width: max-content;
+  border: 1px solid rgba(254, 207, 49, 0.2);
+}
+
+.cardTitle {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--color-dark-blue);
+  letter-spacing: -0.5px;
+}
+
+.cardDescription {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  text-align: justify;
+}
+
+/* Visual Illustration container */
+.visualWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  min-height: 250px;
+  z-index: 1;
+}
+
+.glowOrb {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(254, 207, 49, 0.15) 0%, rgba(254, 207, 49, 0) 70%);
+  filter: blur(20px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.illustrationCard {
+  background: #ffffff;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+.illustrationCard:hover {
+  transform: translateY(-5px) scale(1.02);
+  border-color: rgba(254, 207, 49, 0.3);
+  box-shadow: 0 15px 35px rgba(254, 207, 49, 0.15);
+}
+
+.visualIcon {
+  color: var(--color-gold);
+  filter: drop-shadow(0 0 12px rgba(254, 207, 49, 0.4));
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.visualLabel {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+

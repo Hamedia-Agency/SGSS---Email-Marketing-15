@@ -1,0 +1,329 @@
+.widgetContainer {
+  background: var(--color-dark-blue);
+  border: 1px solid rgba(254, 207, 49, 0.25);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  color: var(--color-white);
+  width: 100%;
+}
+
+.widgetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: rgba(38, 54, 89, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.widgetTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.statusDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  box-shadow: 0 0 12px var(--color-gold);
+  animation: pulseDot 1.8s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.6; }
+}
+
+.widgetTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.widgetSubtitle {
+  font-size: 12px;
+  color: var(--color-gold);
+  margin: 2px 0 0 0;
+  font-weight: 500;
+}
+
+.liveBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(254, 207, 49, 0.15);
+  border: 1px solid rgba(254, 207, 49, 0.3);
+  color: var(--color-gold);
+  padding: 6px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.tabNav {
+  display: flex;
+  background: rgba(15, 25, 45, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  overflow-x: auto;
+}
+
+.tabBtn {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.activeTab {
+  color: var(--color-gold) !important;
+  background: rgba(254, 207, 49, 0.08) !important;
+  border-bottom-color: var(--color-gold) !important;
+  font-weight: 700;
+}
+
+.widgetBody {
+  padding: 24px;
+  min-height: 280px;
+}
+
+.tabDescription {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.logList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.logCard:hover {
+  transform: translateX(4px);
+  border-color: rgba(254, 207, 49, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.logIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logDetails {
+  flex: 1;
+}
+
+.logHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.logPoint {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.logTime {
+  font-size: 11px;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.logMeta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dotSeparator {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.logBadge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-gold);
+  background: rgba(254, 207, 49, 0.12);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.photoCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.photoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.photoCategory {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--color-gold);
+  color: var(--color-dark-blue);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.photoTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 6px;
+}
+
+.photoDesc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.photoFooter {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+}
+
+.incidentCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: var(--radius-md);
+}
+
+.incidentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.incidentTitleGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.incidentTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-white);
+  margin: 0;
+}
+
+.incidentPriority {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-gold);
+  background: rgba(254, 207, 49, 0.15);
+  padding: 2px 8px;
+  border-radius: 100px;
+}
+
+.incidentDetail {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.incidentFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.statusVerified {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+.widgetFooter {
+  background: rgba(15, 25, 45, 0.8);
+  padding: 14px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.widgetCtaLink {
+  color: var(--color-gold);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color var(--transition);
+}
+
+.widgetCtaLink:hover {
+  color: var(--color-gold-hover);
+  text-decoration: underline;
+}

@@ -1,0 +1,162 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  .emblaSlide {
+    flex: 0 0 100%;
+  }
+}
+
+.setupCard {
+  background: var(--color-white, #ffffff);
+  border: 1px solid rgba(29, 44, 72, 0.06);
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 20px rgba(29, 44, 72, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  min-height: 260px;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+.setupCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold, #fecf31), #ffdb58);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.setupCard:hover::before {
+  opacity: 1;
+}
+
+.setupCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(29, 44, 72, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  border-color: rgba(254, 207, 49, 0.3);
+}
+
+.setupCardActive {
+  border-color: rgba(254, 207, 49, 0.5);
+  background: linear-gradient(145deg, #ffffff 0%, #fafcff 100%);
+  box-shadow: 0 8px 24px rgba(29, 44, 72, 0.06);
+}
+
+.setupCardHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.setupCardStep {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-gold, #fecf31);
+  background: var(--color-dark-blue, #1d2c48);
+  padding: 6px 14px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(29, 44, 72, 0.15);
+}
+
+.setupCardTitle {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-dark-blue, #1d2c48);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.setupCardDesc {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #4a5568;
+  margin: 0;
+}
+
+.navigationRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(29, 44, 72, 0.12);
+  background: var(--color-white, #ffffff);
+  color: var(--color-dark-blue, #1d2c48);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.navButton:hover {
+  background: var(--color-gold, #fecf31);
+  border-color: var(--color-gold, #fecf31);
+  color: var(--color-dark-blue, #1d2c48);
+  transform: scale(1.05);
+}
+
+.navArrow {
+  width: 16px;
+  height: 16px;
+}
+
+.emblaDots {
+  display: flex;
+  gap: 8px;
+}
+
+.emblaDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(29, 44, 72, 0.15);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.emblaDotSelected {
+  background: var(--color-gold, #fecf31);
+  transform: scale(1.2);
+}
