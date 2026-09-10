@@ -146,16 +146,19 @@ export const PreFooterCTA = () => {
           {/* Left content */}
           <div className={styles.eyjiCtaCopy}>
             <div className={styles.eyjiCtaKicker}>
-              <div className={styles.eyjiCtaKickerText}>Free Performance Review</div>
+              <div className={styles.eyjiCtaKickerText}>Free Security Assessment</div>
               <span className={styles.eyjiCtaKickerBullet}></span>
             </div>
 
             <h2 className={styles.eyjiCtaTitle}>
-              Get a Hybrid Security Plan Built for Your Site
+              Find Out Where Your Security Setup Stands
             </h2>
 
             <p className={styles.eyjiCtaText}>
-              Every property has a unique physical layout and specific security challenges, and true protection starts with a clear response strategy behind your cameras. Share a few details about your current coverage and site concerns, and our security specialists will evaluate how a custom hybrid model can support your property
+              Effective security isn't about paying for generic packages or adding unnecessary guard hours, it's about ensuring your resources protect the right areas at the right times.
+            </p>
+            <p className={styles.eyjiCtaText} style={{ marginTop: "12px" }}>
+              Fill out the quick form, or click to request your review and see what an engineered security plan looks like for your site. We’ll review your site details and answer your questions.
             </p>
 
             {/* CONTACT INFO */}
@@ -341,7 +344,7 @@ export const PreFooterCTA = () => {
                     '✗ Error - Try Again'
                   ) : (
                     <>
-                      Request Performance Review
+                      Get A Free Security Assessment
                       <span className={styles.eyjiCtaKickerBullet1}></span>
                     </>
                   )}

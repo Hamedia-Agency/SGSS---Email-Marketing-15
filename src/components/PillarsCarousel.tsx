@@ -8,34 +8,29 @@ import styles from './SupervisionCarousel.module.css';
 
 const items = [
   {
-    title: "Video Monitoring",
-    desc: "Live video monitoring provides continuous visibility into designated areas of the property. Instead of relying solely on recorded footage after an incident, suspicious activity can be reviewed while it is happening.",
-    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/em10-2.webp"
+    "title": "On-Site Security Officers",
+    "desc": "Provide continuous visible deterrence, manage access gates, handle visitor screening, and deliver immediate on-scene response for high-risk zones and busy operational hours.",
+    "imgSrc": "https://cms.secureguardservices.com/wp-content/uploads/2026/08/rmlth.webp"
   },
   {
-    title: "Mobile Surveillance Towers",
-    desc: "For large, open, temporary, or difficult-to-wire properties, mobile surveillance towers can provide elevated camera coverage, night visibility, live audio intervention, and remote monitoring without requiring traditional infrastructure across the entire site.",
-    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/compark-1.png"
+    "title": "Mobile Patrols",
+    "desc": "Conduct scheduled or randomized physical inspections, perimeter checks, and door locks for expansive properties or lower-risk periods that do not require a full-time standing guard post.",
+    "imgSrc": "https://cms.secureguardservices.com/wp-content/uploads/2026/08/8237FADA-FD1E-4642-B1AB-83A7F0D65F1F-scaled.webp"
   },
   {
-    title: "Central Dispatch",
-    desc: "Dispatch serves as the operational connection between monitoring and field personnel. When a situation requires additional support, dispatch can communicate with officers, mobile patrol units, supervisors, property contacts, and other appropriate resources.",
-    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/dispatch.png"
+    "title": "Remote Video Monitoring",
+    "desc": "Delivers continuous, active visual oversight across key property vulnerabilities, allowing trained specialists to detect, verify, and intercept suspicious activity in real time.",
+    "imgSrc": "https://cms.secureguardservices.com/wp-content/uploads/2026/08/em10-2.webp"
   },
   {
-    title: "Security Officers",
-    desc: "Standing security officers provide a physical presence at the property and can respond to incidents within their assigned responsibilities. Depending on the assignment, officers may manage access, conduct patrols, monitor activity, assist with emergencies, and document incidents.",
-    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/rmlth.webp"
+    "title": "Solar Surveillance Towers",
+    "desc": "Supply standalone, elevated camera coverage, night visibility, and active deterrence lighting for expansive outdoor yards, remote parking lots, and unwired construction sites.",
+    "imgSrc": "https://cms.secureguardservices.com/wp-content/uploads/2026/08/compark-1.png"
   },
   {
-    title: "Mobile Patrol",
-    desc: "Mobile patrol extends physical security coverage across larger properties or locations that may not require a full-time officer. Patrol personnel can perform scheduled or randomized checks, investigate concerns, respond to verified activity, and provide an additional physical layer of protection.",
-    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/8237FADA-FD1E-4642-B1AB-83A7F0D65F1F-scaled.webp"
-  },
-  {
-    title: "SecureTrack",
-    desc: "SecureTrack connects security operations, reporting, patrol activity, supervision, and field information into a coordinated management system. This gives Secure Guard greater visibility into what is happening across the security operation and provides clients with documented information about activity and response.",
-    imgSrc: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/cliepor.png"
+    "title": "SecureTrack Platform",
+    "desc": "Unifies on-site officers, field supervisors, 24/7 central dispatchers, and live camera feeds into a single coordinated management system to verify patrol rounds, log incidents, and give you complete portfolio transparency.",
+    "imgSrc": "https://cms.secureguardservices.com/wp-content/uploads/2026/08/cliepor.png"
   }
 ];
 

@@ -1,30 +1,51 @@
-﻿"use client";
+"use client";
 
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight, ScanSearch, Eye, Volume2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, ClipboardCheck, Route, Eye, Sliders, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import styles from "./OptimizationTabs.module.css";
 
 const tabsData = [
   {
-    title: "Aligning Security with Site Activity",
-    icon: ScanSearch,
-    description: "Secure Guard analyzes daily workflows, shift changes, delivery schedules, and foot/vehicle traffic to eliminate duplicated, underutilized, or poorly timed coverage hours. Rather than automatically cutting guard hours, we redirect your existing budget away from static, low-activity shifts and focus it directly on peak-vulnerability windows where a physical presence delivers the highest operational value.",
+    step: "Step 1",
+    title: "Step 1: Audit Current Setup",
+    shortTitle: "Audit Current Setup",
+    icon: ClipboardCheck,
+    description: "Examine your active guard schedules, post orders, patrol logs, access management processes, and security technology. This creates an exact baseline of what resources you are currently paying for, where officers are stationed, and how your existing budget is allocated across daily operations.",
     image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/em12-1.webp"
   },
   {
-    title: "Allocating Resources by Risk Level",
-    icon: Eye,
-    description: "Secure Guard evaluates your physical layout—from high-value equipment yards and restricted storage zones to routine perimeters and parking structures—to determine where continuous guard presence is necessary, where periodic mobile patrols suffice, and where surveillance technology offers the best coverage. Assigning security resources based on localized risk rather than rigid standard templates ensures your budget delivers maximum protection where it is needed most.",
+    step: "Step 2",
+    title: "Step 2: Map Daily Workflows",
+    shortTitle: "Map Daily Workflows",
+    icon: Route,
+    description: "Track how employees, visitors, contractors, and delivery vehicles move through your property over a 24-hour cycle. By analyzing shift changes, loading dock activity, opening and closing procedures, and overnight lulls, we determine when your site is bustling and when vulnerabilities naturally spike.",
     image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/em12-2.webp"
   },
   {
-    title: "Technology & Personnel Integration",
-    icon: Volume2,
-    description: "Existing cameras, access control systems, and monitoring tools deliver maximum value when seamlessly integrated with your physical security force. Secure Guard evaluates your property to determine where technology can maintain continuous observation and where human presence is essential for access control, visitor management, and direct response. By coordinating remote video monitoring, mobile patrols, and on-site officers into a unified network, we ensure your technology and personnel complement each other, eliminating redundant expenses while making your current security hardware work significantly harder.",
+    step: "Step 3",
+    title: "Step 3: Analyze Gaps & Overlaps",
+    shortTitle: "Analyze Gaps & Overlaps",
+    icon: Eye,
+    description: "Cross-reference your current guard schedule directly against your site's physical traffic patterns. This exposes operational mismatches—such as paying for static guards during low-risk periods or leaving high-traffic delivery windows and dark perimeters without adequate oversight.",
     image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/em8-2.webp"
+  },
+  {
+    step: "Step 4",
+    title: "Step 4: Realign the Budget",
+    shortTitle: "Realign the Budget",
+    icon: Sliders,
+    description: "Evaluate every dollar spent against your property's actual risk priorities. Instead of simply cutting hours or adding new expenses, we identify underutilized services and reallocate existing funds directly toward high-vulnerability times and locations that require immediate protection.",
+    image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/dispatch.png"
+  },
+  {
+    step: "Step 5",
+    title: "Step 5: Execute Custom Strategy",
+    shortTitle: "Execute Custom Strategy",
+    icon: ShieldCheck,
+    description: "Deliver a clear, actionable plan to optimize your security footprint. This includes refined officer shift schedules, updated post orders, targeted mobile patrol routes, or hybrid camera integration—ensuring your security program is streamlined, responsive, and aligned with how your site actually operates.",
+    image: "https://cms.secureguardservices.com/wp-content/uploads/2026/08/compark-1.png"
   }
 ];
 
@@ -68,10 +89,10 @@ export default function OptimizationTabs() {
                       />
                       
                       {/* Nav Arrows inside image */}
-                      <button className={styles.arrowLeft} onClick={scrollPrev}>
+                      <button className={styles.arrowLeft} onClick={scrollPrev} aria-label="Previous">
                         <ChevronLeft size={20} />
                       </button>
-                      <button className={styles.arrowRight} onClick={scrollNext}>
+                      <button className={styles.arrowRight} onClick={scrollNext} aria-label="Next">
                         <ChevronRight size={20} />
                       </button>
                     </div>
@@ -117,7 +138,7 @@ export default function OptimizationTabs() {
               className={`${styles.tabBtn} ${isActive ? styles.tabBtnActive : ""}`}
             >
               <div className={styles.tabIcon}>
-                <Icon size={20} />
+                <Icon size={18} />
               </div>
               <span className={styles.tabLabel}>{item.title}</span>
             </button>

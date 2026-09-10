@@ -5,15 +5,34 @@ import styles from "./FAQAccordion.module.css";
 import { ChevronDown } from "lucide-react";
 
 const faqData = [
-  { question: "What is hybrid security?", answer: "Hybrid security combines technology-based monitoring (fixed cameras, thermal sensors, and mobile surveillance towers) with physical security services (central dispatch, standing officers, and mobile patrols) into one synchronized response network tailored to your site." },
-  { question: "What types of properties benefit most from hybrid security?", answer: "It is ideal for commercial properties with after-hours vulnerabilities, expansive footprints, or multi-access points—including construction sites, industrial yards, retail centers, multi-level parking structures, multi-family complexes, and vacant properties." },
-  { question: "Do I need to replace my existing security cameras?", answer: "In most cases, no. Secure Guard evaluates your current cameras and network infrastructure to layer live monitoring directly onto compatible hardware, eliminating hardware replacement costs. Supplemental equipment, such as mobile surveillance towers, is introduced only where coverage gaps exist." },
-  { question: "Are operators watching my camera feeds continuously 24/7?", answer: "Active monitoring is configured around your property's specific schedule and risk profile. It typically activates during high-vulnerability off-hours, routing live feeds to central specialists the moment motion sensors or video analytics trigger an alert." },
-  { question: "What happens when suspicious motion is detected?", answer: "Central specialists inspect the live feed within seconds. If a threat is confirmed, operators execute your pre-established protocol—broadcasting live voice-down warnings directly to trespassers, notifying property managers, or dispatching mobile field patrols and law enforcement." },
-  { question: "How does live visual verification prevent false alarm fines?", answer: "Operators inspect live footage before initiating an escalation, filtering out environmental triggers like stray animals, wind-blown debris, or passing headlights. Emergency services and field units are dispatched only for verified threats, eliminating costly municipal false-alarm penalties." },
-  { question: "Does hybrid security replace physical security guards?", answer: "Not necessarily. Hybrid security can operate without on-site guards by relying on remote monitoring and mobile patrols, or it can complement standing officers by extending coverage into blind spots beyond a guard's physical line of sight." },
-  { question: "What is the role of central dispatch?", answer: "Dispatch serves as the operational link between monitoring operators and physical security personnel. When an incident requires on-ground intervention, dispatch routes verified situational intelligence to mobile patrol units, standing guards, property contacts, or local emergency services." },
-  { question: "How does SecureTrack support hybrid security?", answer: "SecureTrack consolidates operations, patrol activity, guard tracking, and incident documentation into a single digital dashboard. It automatically logs exact timestamps for initial threat detection, human verification, voice intervention, field dispatch, and final resolution—delivering audit-ready transparency across your portfolio." }
+  {
+    "question": "What is a security cost optimization review?",
+    "answer": "An operational review evaluates how your current security budget, guard schedules, post orders, and technology align with your facility's actual daily activity and risk profile. Rather than assuming more guard hours equal better security, we identify coverage redundancies, quiet-period waste, and unaddressed gap periods so every dollar delivers maximum protection."
+  },
+  {
+    "question": "Does cost optimization mean simply cutting security guards or reducing protection?",
+    "answer": "No. The objective is strategic budget alignment, not blind cost-cutting. We eliminate paid guard hours during low-vulnerability periods and reallocate those existing funds toward peak-risk windows, mobile patrols, or hybrid video surveillance. This tightens site security while lowering or maintaining overall operational costs."
+  },
+  {
+    "question": "Can Secure Guard evaluate our site while our current security provider contract is active?",
+    "answer": "Yes. You do not need to alter or cancel your current security arrangement to request a review. Secure Guard conducts an independent evaluation of your physical layout, guard schedules, and post orders, giving you an objective baseline of where your budget is performing effectively and where coverage can be optimized."
+  },
+  {
+    "question": "What does \"architectural efficiency\" mean in property security?",
+    "answer": "Architectural efficiency means designing security directly around your property's unique physical blueprint and daily operational behavior. We evaluate entry points, loading docks, equipment yards, camera sightlines, and foot/vehicle traffic as an integrated system\u2014ensuring physical officers, mobile patrols, and surveillance technology support each other without redundant coverage."
+  },
+  {
+    "question": "Can our existing cameras and security hardware be included in the review?",
+    "answer": "Yes. We evaluate your existing camera infrastructure, access controls, and monitoring equipment as part of the total security ecosystem. Our objective is to maximize the utility of your functional hardware and integrate it into our operational network, avoiding unnecessary equipment replacement costs."
+  },
+  {
+    "question": "What types of facilities benefit most from an operational security review?",
+    "answer": "Any facility with fluctuating activity cycles benefits from an evaluation. This includes industrial facilities, commercial real estate, construction sites, logistics centers, multi-family communities, healthcare campuses, and multi-location commercial portfolios throughout California."
+  },
+  {
+    "question": "Is there any cost or obligation tied to requesting an operational security review?",
+    "answer": "No. Secure Guard offers a no-obligation security assessment with zero financial commitment. We review your layout, examine your current security structure, and outline practical strategy recommendations to eliminate wasted spend and enhance site protection."
+  }
 ];
 
 export function FAQAccordion() {
