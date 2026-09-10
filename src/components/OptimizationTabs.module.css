@@ -113,6 +113,8 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 .cardTitleRow {
@@ -120,6 +122,8 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
 }
 
 .iconCircle {
@@ -147,12 +151,16 @@
   line-height: 1.6;
   margin-bottom: 32px;
   flex: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .dots {
   display: flex;
   gap: 8px;
   margin-top: auto;
+  position: relative;
+  z-index: 1;
 }
 
 .dot {
@@ -185,6 +193,8 @@
   cursor: pointer;
   transition: all 0.3s;
   text-align: left;
+  position: relative;
+  overflow: hidden;
 }
 
 .tabBtn:hover {
@@ -202,6 +212,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  position: relative;
+  z-index: 1;
 }
 
 .tabLabel {
@@ -209,4 +221,39 @@
   font-size: 15px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  position: relative;
+  z-index: 1;
+}
+
+.bgNumber {
+  position: absolute;
+  bottom: -20px;
+  right: 10px;
+  font-size: 160px;
+  font-weight: 900;
+  color: rgba(29, 44, 72, 0.04);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  letter-spacing: -4px;
+}
+
+.tabBgNumber {
+  position: absolute;
+  bottom: -15px;
+  right: 10px;
+  font-size: 70px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+  letter-spacing: -2px;
+  transition: all 0.3s;
+}
+
+.tabBtnActive .tabBgNumber {
+  color: rgba(255, 255, 255, 0.08);
 }

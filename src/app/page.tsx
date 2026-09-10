@@ -46,7 +46,7 @@ export default function HomePage() {
             </p>
             <div className={styles.heroCtas}>
               <a 
-                href="#assessment-form" 
+                href="https://www.secureguardservices.com/contact" 
                 className={styles.btnPrimary} 
                 id="hero-cta-primary"
               >
